@@ -1,4 +1,5 @@
 export class Product {
+    id: string;
     age: string;
     brand: string;
     country: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from './product';
+import { PRODUCTS } from '../products';
 
 @Component({
   selector: 'app-product-details',
@@ -8,22 +8,15 @@ import { Product } from './product';
   styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
-
+  products = PRODUCTS;
+  product;
   constructor() { }
 
-  product: Product =
-    {
-      age: '10',
-      brand: 'Bacardi',
-      country: 'США',
-      name: 'Ром BACARDI CARTA NEGRA',
-      fortress: '40',
-      price: '54.36',
-      type: 'Черный ром',
-      volume: '0.7',
-      img: 'http://nsk-dostavka24.website/components/com_jshopping/files/img_products/bacardi-carta-negra.jpg'
-    }
+  ngOnInit() {
+    this.getProduct();
+  }
 
-  ngOnInit() {}
-
+  getProduct() {
+    this.product = this.products.find(x => x.id === '1');
+  }
 }
