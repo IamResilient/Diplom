@@ -1,0 +1,43 @@
+.toolbar {
+    width: 100%;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    background: #1B64D2;
+}
+
+.image {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+.name {
+    text-align: center;
+    color: #1E3196;
+    font-weight: bold;
+}
+
+.price {
+    text-align: center;
+    color: #1E3196;
+    font-weight: bold;
+}
+
+.details {
+    color: #1E3196;
+}
+
+.add {
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #1E3196; 
+    color: #FFFFFF
+}
+
+hr {
+    width: 85%;
+}

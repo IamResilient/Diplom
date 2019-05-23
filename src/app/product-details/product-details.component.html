@@ -1,0 +1,41 @@
+<mat-toolbar class="toolbar" color="primary">
+  <mat-toolbar-row>
+    <span>
+      <button mat-icon-button>
+        <mat-icon class="mat-icon">menu</mat-icon>
+      </button>
+    </span>
+    <span>Информация о товаре</span>
+    <span style="flex: 1 1 auto"></span>
+    <span>
+      <button mat-icon-button routerLink="/cart">
+        <mat-icon class="mat-icon">shopping_cart</mat-icon>
+      </button>
+    </span>
+    <span>500BYN</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<button mat-icon-button>
+  <mat-icon>keyboard_backspace</mat-icon>
+</button>
+<div *ngIf="product">
+<img class="image" src="{{ product.img }}">
+<p class="name">{{ product.name }}</p>
+<hr color="#ACB8F7">
+<div style="display: block; width: 80%; margin: 0 auto;">
+  <div style="display: inline-block; width: 50%;">
+    <p class="details">Крепость: {{ product.fortress }}%</p>
+    <p class="details">Объем(л): {{ product.volume }}</p>
+    <p class="details">Выдержка: {{ product.age }}</p>
+  </div>
+  <div style="display: inline-block; width: 50%;">
+    <p class="details">Бренд: {{ product.brand }}</p>
+    <p class="details">Тип: {{ product.type }}</p>
+    <p class="details">Страна: {{ product.country }}</p>
+  </div>
+</div>
+<hr color="#ACB8F7">
+  <p class="price">Цена: {{ product.price }}BYN</p>
+<hr color="#ACB8F7">
+<button mat-raised-button class="add">Добавить в корзину</button>
+</div>
