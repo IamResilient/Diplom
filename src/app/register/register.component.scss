@@ -1,0 +1,26 @@
+.toolbar {
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #1B64D2;
+    color: #FFFFFF
+}
+
+.stepper {
+    position: absolute;
+    top: 100px;
+    left: 5px;
+}
+
+.form {
+    width: 90%;
+    mat-form-field {
+        display: block;
+    } 
+}
+.register {
+    left: 20px;
+    background-color: #1E3196;
+    color: #FFFFFF
+}

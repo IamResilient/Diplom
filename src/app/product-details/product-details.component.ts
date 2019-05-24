@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatSidenav} from '@angular/material/sidenav';
 
 import { PRODUCTS } from '../products';
+import { Observable } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-details',
@@ -10,7 +14,13 @@ import { PRODUCTS } from '../products';
 export class ProductDetailsComponent implements OnInit {
   products = PRODUCTS;
   product;
-  constructor() { }
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
     this.getProduct();

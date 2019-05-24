@@ -1,0 +1,63 @@
+<mat-toolbar class="toolbar">
+  <span>Register</span>
+</mat-toolbar>
+<form  class="stepper">
+  <mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step>
+      <form class="form">
+        <ng-template matStepLabel>1st Step</ng-template>
+        <mat-form-field>
+          <input matInput class="standart-input" placeholder="Name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput class="standart-input" placeholder="Surname" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput class="standart-input" placeholder="Patronymic" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>2nd step</ng-template>
+        <mat-form-field>
+          <input matInput class="standart-input" placeholder="Email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Card number" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Valid THRU" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="CVV2/CVC2" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>3rd step</ng-template>
+        <mat-form-field>
+          <input matInput type="password" class="standart-input" placeholder="Password" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" class="standart-input" placeholder="Confirm password" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+  <div>
+    <button mat-raised-button class="register">Register</button>
+    <button mat-button routerLink="/login">Login</button>
+  </div>
+</form>
