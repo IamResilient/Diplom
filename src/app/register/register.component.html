@@ -1,0 +1,59 @@
+<mat-toolbar>
+  <span>Register</span>
+</mat-toolbar>
+<mat-horizontal-stepper class="stepper" [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form>
+      <ng-template matStepLabel>1st Step</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Surname" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Patronymic" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form>
+      <ng-template matStepLabel>2nd step</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Email" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Card number" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Valid THRU" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="CVV2/CVC2" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form>
+      <ng-template matStepLabel>3rd step</ng-template>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" required>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput type="password" placeholder="Confirm password" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+<button mat-raised-button color="primary">Register</button>
+<button mat-button routerLink="/login">Login</button>
