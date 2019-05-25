@@ -1,6 +1,7 @@
 {
   "name": "self-checkout",
   "integrations": {
+    "capacitor": {},
     "cordova": {}
   },
   "type": "angular"
