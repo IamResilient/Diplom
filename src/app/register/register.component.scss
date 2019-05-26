@@ -10,7 +10,7 @@
 .stepper {
     position: absolute;
     top: 100px;
-    left: 5px;
+    left: 0px;
 }
 
 .form {
@@ -19,8 +19,12 @@
         display: block;
     } 
 }
+
+.buttons {
+    margin-left: 20px;
+}
 .register {
-    left: 20px;
     background-color: #1E3196;
     color: #FFFFFF
 }
+

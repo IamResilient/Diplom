@@ -5,15 +5,15 @@
   <mat-horizontal-stepper [linear]="true" #stepper>
     <mat-step>
       <form class="form">
-        <ng-template matStepLabel>1st Step</ng-template>
+        <ng-template matStepLabel>1st step</ng-template>
         <mat-form-field>
           <input matInput class="standart-input" placeholder="Name" required>
         </mat-form-field>
         <mat-form-field>
-          <input matInput class="standart-input" placeholder="Surname" required>
+          <input matInput class="standart-input" placeholder="Patronymic" required>
         </mat-form-field>
         <mat-form-field>
-          <input matInput class="standart-input" placeholder="Patronymic" required>
+          <input matInput class="standart-input" placeholder="Surname" required>
         </mat-form-field>
         <div>
           <button mat-button matStepperNext>Next</button>
@@ -22,7 +22,7 @@
     </mat-step>
     <mat-step>
       <form>
-        <ng-template matStepLabel>2nd step</ng-template>
+        <ng-template matStepLabel>2st step</ng-template>
         <mat-form-field>
           <input matInput class="standart-input" placeholder="Email" required>
         </mat-form-field>
@@ -43,7 +43,7 @@
     </mat-step>
     <mat-step>
       <form>
-        <ng-template matStepLabel>3rd step</ng-template>
+        <ng-template matStepLabel>3st step</ng-template>
         <mat-form-field>
           <input matInput type="password" class="standart-input" placeholder="Password" required>
         </mat-form-field>
@@ -56,7 +56,7 @@
       </form>
     </mat-step>
   </mat-horizontal-stepper>
-  <div>
+  <div class="buttons">
     <button mat-raised-button class="register">Register</button>
     <button mat-button routerLink="/login">Login</button>
   </div>

@@ -7,6 +7,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -50,6 +51,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
+import { BarcodeScannerComponent } from './barcode-scanner/barcode-scanner.component'
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
 
@@ -60,6 +62,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     RegisterComponent,
     ProductDetailsComponent,
     CartComponent,
+    BarcodeScannerComponent,
   ],
   entryComponents: [],
   imports: [
@@ -109,6 +112,7 @@ import { LayoutModule } from '@angular/cdk/layout';
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

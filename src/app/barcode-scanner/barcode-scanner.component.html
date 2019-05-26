@@ -1,0 +1,5 @@
+<span>Scan</span>
+<button mat-button (click)=scan()>Scanner</button>
+<div *ngIf="scannedData.text">
+  <span>{{scannedData.text}}</span>
+</div>
