@@ -1,2 +1,35 @@
-<span>Scan</span>
-<button mat-button (click)=scan()>Scanner</button>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="!(isHandset$ | async)">
+      <mat-toolbar class="toolbar">Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item href="#">Personal Cabinet</a>
+        <a mat-list-item routerLink="/scanner">Link 2</a>
+        <a mat-list-item href="#">Link 3</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar class="toolbar">
+          <button
+            type="button"
+            aria-label="Toggle sidenav"
+            mat-icon-button
+            (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span>Scanner</span>
+        <span style="flex: 1 1 auto"></span>
+        <span>
+          <button mat-icon-button routerLink="/cart">
+            <mat-icon class="mat-icon" matBadge="15">shopping_cart</mat-icon>
+          </button>
+        </span>
+        </mat-toolbar>
+        <div style="margin-top: 200px">
+            <button mat-button class="scan" (click)=scan()>Scan</button>
+        </div>       
+    </mat-sidenav-content>
+  </mat-sidenav-container>

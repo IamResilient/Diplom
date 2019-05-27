@@ -3,9 +3,9 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="toolbar">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Личный кабинет</a>
+      <a mat-list-item href="#">Personal Cabinet</a>
       <a mat-list-item routerLink="/scanner">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
@@ -20,7 +20,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Информация о товаре</span>
+      <span>Product information</span>
     <span style="flex: 1 1 auto"></span>
     <span>
       <button mat-icon-button routerLink="/cart">
@@ -38,18 +38,18 @@
 <hr color="#ACB8F7">
 <div style="display: block; width: 80%; margin: 0 auto;">
   <div style="display: inline-block; width: 50%;">
-    <p class="details">Крепость: {{ product.fortress }}%</p>
-    <p class="details">Объем(л): {{ product.volume }}</p>
-    <p class="details">Выдержка: {{ product.age }}</p>
+    <p class="details">Fortress: {{ product.fortress }}%</p>
+    <p class="details">Volume(l): {{ product.volume }}</p>
+    <p class="details">Age: {{ product.age }}</p>
   </div>
   <div style="display: inline-block; width: 50%;">
-    <p class="details">Бренд: {{ product.brand }}</p>
-    <p class="details">Тип: {{ product.type }}</p>
-    <p class="details">Страна: {{ product.country }}</p>
+    <p class="details">Brand: {{ product.brand }}</p>
+    <p class="details">Type: {{ product.type }}</p>
+    <p class="details">Country: {{ product.country }}</p>
   </div>
 </div>
 <hr color="#ACB8F7">
-  <p class="price">Цена: {{ product.price }}BYN</p>
+  <p class="price">Cost: {{ product.price }}BYN</p>
 <hr color="#ACB8F7">
-<button mat-raised-button class="add">Добавить в корзину</button>
+<button mat-raised-button class="add">Add to cart</button>
 </div>

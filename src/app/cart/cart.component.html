@@ -3,9 +3,9 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="toolbar">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Линчый кабинет</a>
+      <a mat-list-item href="#">Personal Cabinet</a>
       <a mat-list-item routerLink="/scanner">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>

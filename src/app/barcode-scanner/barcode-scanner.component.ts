@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -10,13 +14,15 @@ import {Router} from '@angular/router';
 })
 export class BarcodeScannerComponent implements OnInit {
   options: BarcodeScannerOptions;
-
-  
-  constructor( 
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
+  constructor(
     public scanner: BarcodeScanner,
-    private router: Router) { 
-
-    }
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+    ) {}
 
   ngOnInit() {
 
@@ -27,11 +33,10 @@ export class BarcodeScannerComponent implements OnInit {
       prompt: 'Scan you barcode'
     };
     this.scanner.scan(this.options).then((data) => {
-      this.router.navigate(['/product-details/' + data.text])
-      alert
+      this.router.navigate(['/product-details/' + data.text]);
     }, (err) => {
-      console.log('Error: ', err)
-    })
+      console.log('Error: ', err);
+    });
   }
 
 }
