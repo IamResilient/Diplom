@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
+import { ActivatedRoute } from '@angular/router'
 
 import { PRODUCTS } from '../products';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+
+import { ProductDetailsService } from './product-details.service'
+import { Product } from './product'
 
 @Component({
   selector: 'app-product-details',
@@ -12,21 +16,24 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
-  products = PRODUCTS;
-  product;
-
+  product: Product;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private route: ActivatedRoute,
+    private service: ProductDetailsService
+  ) {}
 
   ngOnInit() {
-    this.getProduct();
+    this.getProductDetails();
   }
 
-  getProduct() {
-    this.product = this.products.find(x => x.id === '1');
+  getProductDetails(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.product = this.service.getProduct(id);
   }
 }

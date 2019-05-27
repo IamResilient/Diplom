@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,20 +10,28 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 })
 export class BarcodeScannerComponent implements OnInit {
   options: BarcodeScannerOptions;
-  scannedData: any = {};
-  
-  constructor( public scanner: BarcodeScanner ) { }
 
-  ngOnInit() {}
+  
+  constructor( 
+    public scanner: BarcodeScanner,
+    private router: Router) { 
+
+    }
+
+  ngOnInit() {
+
+  }
 
   scan() {
     this.options = {
       prompt: 'Scan you barcode'
     };
     this.scanner.scan(this.options).then((data) => {
-      this.scannedData = data;
+      this.router.navigate(['/product-details/' + data.text])
+      alert
     }, (err) => {
       console.log('Error: ', err)
     })
   }
+
 }
