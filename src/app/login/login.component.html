@@ -2,8 +2,13 @@
   <span>Login</span>
 </mat-toolbar>
 <form>
+  <div class="alert">
+    <div>
+      Invalid email or password
+    </div>
+  </div>
   <mat-form-field class="standart-input">
-    <input matInput placeholder="Email">
+    <input matInput placeholder="Email" #email>
   </mat-form-field>
   <div class="alert">
     <div>
@@ -11,13 +16,13 @@
     </div>
   </div>
   <mat-form-field class="standart-input">
-    <input type="password" matInput placeholder="Password">
+    <input type="password" matInput placeholder="Password" #password>
   </mat-form-field>
   <div class="alert">
     <div>
       Field is required
     </div>
   </div>
-  <button mat-raised-button routerLink="/scanner" class="login">Login</button>
+  <button mat-raised-button (click)="goNext(email.value, password.value)" class="login">Login</button>
   <button mat-button routerLink="/register">Register</button>
 </form>

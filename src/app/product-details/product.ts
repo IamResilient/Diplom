@@ -1,12 +1,14 @@
 export class Product {
     id: string;
-    age: string;
-    brand: string;
-    country: string;
-    name: string;
-    fortress: string;
-    price: string;
+    theEnergyValue: number;
+    squirrels: number;
+    carbohydrates: number;
+    fats: number;
     type: string;
-    volume: string;
+    brand: string;
+    name: string;
+    weight: number;
+    price: number;
+    taste: string;
     img: string;
 }

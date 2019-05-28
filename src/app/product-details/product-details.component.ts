@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 
-import { PRODUCTS } from '../products';
+
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 
-import { ProductDetailsService } from './product-details.service'
-import { Product } from './product'
+import { ProductDetailsService } from './product-details.service';
+import { Product } from './product';
 
 @Component({
   selector: 'app-product-details',
