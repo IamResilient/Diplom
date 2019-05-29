@@ -1,6 +1,6 @@
 import { Product } from './product-details/product';
 
-export const PRODUCTS: Product[] = [
+export const cart: Product[] = [
     {
         id: '1',
         theEnergyValue: 395,

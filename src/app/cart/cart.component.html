@@ -4,10 +4,10 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
     <mat-toolbar class="toolbar">Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Personal Cabinet</a>
-      <a mat-list-item routerLink="/scanner">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+    <mat-nav-list style="padding-top: 0px;">
+      <a mat-list-item href="#" style="background-color: #FFFAFA; border-bottom: 1px solid #DCDCDC">Personal Cabinet</a>   
+      <a mat-list-item href="#" style="background-color: #FFFAFA; border-bottom: 1px solid #DCDCDC">Cart</a>
+      <a mat-list-item routerLink="/scanner" style="background-color: #FFFAFA; border-bottom: 1px solid #DCDCDC">Back to scan</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,6 +28,13 @@
       </button>
     </span>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <ul>
+      <li><span>Product</span><button>Delete</button></li>
+      <li><span>Product</span><button>Delete</button></li>
+      <li><span>Product</span><button>Delete</button></li>
+      <li><span>Product</span><button>Delete</button></li>
+      <li><span>Product</span><button>Delete</button></li>
+      <li><span>Product</span><button>Delete</button></li>
+    </ul>
   </mat-sidenav-content>
 </mat-sidenav-container>
