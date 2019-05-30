@@ -1,5 +1,5 @@
 <mat-toolbar class="toolbar">
-  <span>Login</span>
+  <span>Sign in</span>
 </mat-toolbar>
 <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
   <mat-form-field class="standart-input">
@@ -16,7 +16,7 @@
     <div *ngIf="form.get('password').errors.required">Password is required</div>
   </div>
   <div class="buttons">
-    <button mat-raised-button (click)="goNext(email.value, password.value)" class="login">Login</button>
-    <button mat-button routerLink="/register">Register</button>
+    <button mat-raised-button (click)="goNext(email.value, password.value)" class="login">Sign in</button>
+    <button mat-button routerLink="/register">Sign Up</button>
   </div> 
 </form>

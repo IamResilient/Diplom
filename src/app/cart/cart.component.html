@@ -6,7 +6,7 @@
     <mat-toolbar class="toolbar">Menu</mat-toolbar>
     <mat-nav-list style="padding-top: 0px;">
       <a mat-list-item href="#" style="background-color: #FFFAFA; border-bottom: 1px solid #DCDCDC">Personal Cabinet</a>   
-      <a mat-list-item href="#" style="background-color: #FFFAFA; border-bottom: 1px solid #DCDCDC">Cart</a>
+      <a mat-list-item routerLink="/cart" style="background-color: #FFFAFA; border-bottom: 1px solid #DCDCDC">Cart</a>
       <a mat-list-item routerLink="/scanner" style="background-color: #FFFAFA; border-bottom: 1px solid #DCDCDC">Back to scan</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -24,17 +24,16 @@
     <span style="flex: 1 1 auto"></span>
     <span>
       <button mat-icon-button routerLink="/cart">
-        <mat-icon class="mat-icon" matBadge="15">shopping_cart</mat-icon>
+        <mat-icon class="mat-icon" matBadge="4">shopping_cart</mat-icon>
       </button>
     </span>
     </mat-toolbar>
     <ul>
-      <li><span>Product</span><button>Delete</button></li>
-      <li><span>Product</span><button>Delete</button></li>
-      <li><span>Product</span><button>Delete</button></li>
-      <li><span>Product</span><button>Delete</button></li>
-      <li><span>Product</span><button>Delete</button></li>
-      <li><span>Product</span><button>Delete</button></li>
+      <li><span>Protein 100</span><button>Delete</button></li>
+      <li><span>Protein 90</span><button>Delete</button></li>
+      <li><span>BioTech Nitro Pure Whey</span><button>Delete</button></li>
+      <li><span>Trec Nutrition Whey 100%</span><button>Delete</button></li>
     </ul>
+    <div style="display: block; margin: 0 auto; width: 240px"><span style="display: inline-block; margin-right: 5px">Total cost: 544.68 BYN</span><button style="display: inline-block; background-color: #1E3196; color: #FFFFFF; margin-top: 10px; margin-left: 5px" mat-button>Pay</button></div>
   </mat-sidenav-content>
 </mat-sidenav-container>
